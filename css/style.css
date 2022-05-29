@@ -1,0 +1,443 @@
+/*General Settings*/
+:root{
+    --yellow: #d5d51b;
+    --orange: #f39100;
+    --violet: #dd1cdd;
+}
+input[type='file']{
+    background-color: var(--violet);
+}
+input[type='text'],
+input[type='password'],
+textarea{
+    color: black;
+    border-radius: 10px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: whitesmoke;
+    outline: none;
+    border: none;
+    font-weight: bolder;
+}
+pre{
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--yellow);
+}
+.container{
+    position: relative;
+}
+.first-section{
+    min-height: 80vh;
+    padding: 0.5em;
+}
+#second-section{
+    min-height: 100vh;
+    padding: 0.5em;   
+}
+/*Navigation*/
+.navigation-bar{
+    display: flex;
+    height: 20vh;
+    background-color: #102e2e;
+}
+.navigation-menu{
+    height: inherit;
+    width: 80%;
+}
+.navigation-menu>div{
+    height: 50%;
+}
+.navigation-category{
+    display: flex;
+    height: 100%;
+}
+.navigation-category>li{
+    border: 1px solid black;
+    height: 90%;
+    margin-right: 0.1em;
+    display: grid;
+    place-items: center;    
+    width: calc(100%/7);
+    background-color: var(--violet);
+}
+.navigation-search-bar{
+    width: fit-content;
+    display: flex;
+}
+.navigation-menu-first-section{
+    padding: 1em 0.1em;
+    display: flex;
+    justify-content: space-between;
+}
+.navigation-account>input{
+    height: 100%;
+    width: 8em;
+    margin-right: 1em;
+    background-color: var(--orange);
+}
+.navigation-search-input{
+    width: 30em;
+    padding-left: 1em;
+}
+.navigation-search-submit{
+    width: 10em;
+    background-color: var(--orange);
+}
+.navigation-logo{
+    height: inherit;
+    width: 20%;
+    padding: 2em 0.5em;
+}
+.navigation-logo>img{
+    height: 100%;
+    width: 100%;
+}
+/*Home*/
+.home-products{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    min-height: 80vh;
+    grid-gap: 10px;
+}
+.home-product-container{
+    padding: 2em;
+    height: fit-content;
+    background-color: var(--orange);
+}
+.home-products img{
+    height: 10em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.home-buy{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0,0);
+    background-color: aliceblue;
+    height: 90vh;
+    width: 30em;
+    padding: 1em;
+    transition: 0.5s;
+    background-color:#102e2e;
+}
+.home-buy>img{
+    width: 100%;
+    height: 15em;
+    margin-bottom: 1em;
+}
+.home-buy-buttons{
+    position: fixed;
+    bottom: 1em;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+.home-buy-buttons>input{
+    width: 7em;
+    padding: 0.5em 0;
+    margin: 0 1em;
+    background-color: var(--orange);
+}
+/*Login*/
+.login-container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+#login{
+    height: 35em;
+    width: 80%;
+    display: flex;
+}
+#login>div{
+    width: 50%;
+    height: inherit;
+}
+#login-form{
+    height: fit-content;
+    padding: 3em 1em;
+}
+#login-form>div{
+    text-align: center;
+    margin-bottom: 1em;
+}
+.login-input{
+    display: flex;
+    flex-direction: column;
+}
+.login-input>input{
+    width: 20em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;    
+}
+.login-button>input{
+    width: 6em;
+    margin: 0 1em;
+    padding: 0.5em;
+    background-color: var(--orange);
+}
+.login-first-section{
+    display: grid;
+    position: relative;
+    place-items: center;
+    z-index: 1;
+    background-color: var(--violet);
+    animation: loginTurnLeft 1s ease-in-out 1;
+}
+.login-first-section>h1{
+    color: whitesmoke;
+    transform: rotateZ(-40deg)
+}
+.login-second-section{
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+    background-color:#102e2e;
+    animation: loginTurnRight 1s ease-in-out 1;
+}
+/*Sign Up*/
+.signup-container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+#signup-form{
+    background-color:#102e2e;
+    padding: 1em;
+    min-width: 29em;
+    height: 80vh;
+}
+#signup-form>*{
+    width: 100%;
+    display: flex;
+}
+.signup-container input[type='text'],
+.signup-container input[type='email'],
+.signup-container input[type='password'],
+.signup-container input[type='number']{
+    padding: 0.5em;
+    color: black;
+    border-radius: 10px;
+}
+.signup-buttons{
+    display: flex;
+    justify-content:space-evenly;
+    margin-top: 5em;
+    align-items: center;
+}
+.signup-gender{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.signup-show-password{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.signup-passwords{
+    margin: 1em 0 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+}
+#signup-checkbox{
+    margin-right: 0.5em;
+}
+#signup-title{
+    margin-bottom: 1.5em;
+}
+.signup-names{
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.signup-buttons>input{
+    width: 10em;
+    padding: 0.5em 0;
+    background-color: var(--orange);
+}
+.signup-footer{
+    display: flex;
+    margin-top: 1em;
+    justify-content: center;
+}
+/*Admin*/
+.admin-navigation-category{
+    border: 1px solid black;
+    display: flex;
+    height: 100%;
+}
+.admin-navigation-category>*{
+    width: calc(100%/3);
+    display: grid;
+    place-items: center;    
+    height: 90%;
+    background-color: var(--violet);    
+    margin-right: 5px;
+}
+.admin-navigation-category>button>a{
+    height: 100%;
+    width: 100%;
+    padding-top: 1.6em;
+}
+.admin-products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+.admin-products img{
+    height: 10em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.admin-product-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 5em;
+    background-color: var(--orange);
+}
+.admin-checkout-container{
+    display: flex;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: var(--orange);
+}
+.admin-checkout-container > img{
+    width: 20em;
+    height: 10em;
+    margin-right: 1em;
+}
+.admin-product-information{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--violet);
+    width: 100%;
+}
+/*Add Product*/
+.add-product{
+    position: fixed;
+    height: 90vh;
+    width: 30em;
+    top: 50vh;
+    background-color:#102e2e;
+    transform: translate(-50%,-50%);
+    padding: 1em;
+    left: -100%;
+    transition: 1s;
+}
+.add-upload-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-image-preview{
+    border: 1px solid black;
+    width: 100%;
+    height: 13em;
+    margin-bottom: 1em;
+}
+.add-product-details{
+    text-align: center;
+    margin-top: 2em;
+}
+.add-product-details>textarea{
+    width: 100%;
+    padding: 0.5em;
+}
+.add-buttons{
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 1em;
+    left: 0;
+}
+.add-buttons>input{
+    margin: 0 1em;
+    width: 6em;
+    padding: 0.5em 0;
+    background-color: var(--orange);
+}
+.hide-button{
+    display: none;
+}
+/*Selected Item*/
+#selected-product{
+    display: none;
+}
+/*Footer*/
+footer{
+    border-top: 1px solid black;
+    height: 40vh;
+    padding: 1em;
+    z-index: 1;
+    background-color: #102e2e;
+}
+#footer-top{
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#footer-top>span>*, #footer-bottom>*{
+    color: whitesmoke;
+}
+#footer-top>span:nth-child(1){
+    width: 40%;
+    text-align: justify;
+}
+#footer-bottom{
+    width: 100%;
+    display: flex;
+    padding-top: 1em;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-icon{
+    padding: 0.2em;
+    border-radius: 50px;
+    border: 1px solid whitesmoke;
+    fill: whitesmoke !important;
+    height: 1.5em;
+    width: 1.5em;
+}
+.footer-title{
+    margin-bottom: 1em;
+}
+
+/*Login Animation*/
+@keyframes loginTurnLeft{
+    0%{
+        left: 25%;
+    }100%{
+        left: 0%;
+    }
+}
+@keyframes loginTurnRight{
+    0%{
+        right: 25%;
+    }100%{
+        right: 0%;
+    }
+}
